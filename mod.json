@@ -26,7 +26,8 @@
 
 		},
 		"files": [
-			"resources/textures/*.zip",
+			"resources/textures/SpinOffGames_Part1.zip",
+			"resources/textures/SpinOffGames_Part2.zip
 			"resources/levels/*.txt"
 
 		]
