@@ -4,14 +4,11 @@
 
 using namespace geode::prelude;
 
-// Asegúrate de usar geode::Popup explícitamente
-class WorldLevel : public geode::Popup<std::string const&> {
+// Cambiamos el nombre para que no choque con nada de GD
+class MyCustomLevelPopup : public geode::Popup<std::string const&> {
 protected:
-    bool setup(std::string const& value) override; // Cambia init por setup
+    bool setup(std::string const& value) override;
 
 public:
-    static WorldLevel* create(std::string const& text);
-    
-    // Si esta función no existe en la clase padre de Geode, quita el 'override'
-    void updatePageWithObject(cocos2d::CCObject* page, cocos2d::CCObject* object);
+    static MyCustomLevelPopup* create(std::string const& text);
 };
