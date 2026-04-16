@@ -518,7 +518,7 @@ bool ownWorldSelectLayer::init(int page) {
           Mod::get()->setSavedValue("wlevelunlocked", 1);
           level2Btn->runAction(CCSequence::create(
               CCDelayTime::create(1.8),
-              CCCallFunc::create(this, callfunc_selector(ownWorldSelectLayer::runParticle)), // Utilizamos CCCallFunc para llamar a la funci髇 runParticle
+              CCCallFunc::create(this, callfunc_selector(ownWorldSelectLayer::runParticle)), // Utilizamos CCCallFunc para llamar a la funci贸n runParticle
               CCFadeIn::create(0.1),
               CCEaseBounceOut::create(scaleWithBounce2),
               nullptr
@@ -581,7 +581,7 @@ bool ownWorldSelectLayer::init(int page) {
           Mod::get()->setSavedValue("wlevelunlocked", 2);
           level3Btn->runAction(CCSequence::create(
               CCDelayTime::create(1.8),
-              CCCallFunc::create(this, callfunc_selector(ownWorldSelectLayer::runParticle)), // Utilizamos CCCallFunc para llamar a la funci髇 runParticle
+              CCCallFunc::create(this, callfunc_selector(ownWorldSelectLayer::runParticle)), // Utilizamos CCCallFunc para llamar a la funci贸n runParticle
               CCFadeIn::create(0.1),
               CCEaseBounceOut::create(scaleWithBounce2),
               nullptr
@@ -604,7 +604,7 @@ bool ownWorldSelectLayer::init(int page) {
           }
       }
       /*dashlandsmenu->addChild(particles, 2);*/
-      // Establecer la escala inicial como 0 para que est閚 invisibles
+      // Establecer la escala inicial como 0 para que est茅n invisibles
      
       CCMenuItemSpriteExtra* level4Btn = CCMenuItemSpriteExtra::create(unkspr3, this, menu_selector(ownWorldSelectLayer::onWorldLevel));
 
@@ -683,7 +683,7 @@ bool ownWorldSelectLayer::init(int page) {
           Mod::get()->setSavedValue("wlevelunlocked", 3);
           level4Btn->runAction(CCSequence::create(
               CCDelayTime::create(1.8),
-              CCCallFunc::create(this, callfunc_selector(ownWorldSelectLayer::runParticle)), // Utilizamos CCCallFunc para llamar a la funci髇 runParticle
+              CCCallFunc::create(this, callfunc_selector(ownWorldSelectLayer::runParticle)), // Utilizamos CCCallFunc para llamar a la funci贸n runParticle
               CCFadeIn::create(0.1),
               CCEaseBounceOut::create(scaleWithBounce2),
               nullptr
@@ -753,7 +753,7 @@ bool ownWorldSelectLayer::init(int page) {
           Mod::get()->setSavedValue("wlevelunlocked", 4);
           level5Btn->runAction(CCSequence::create(
               CCDelayTime::create(1.8),
-              CCCallFunc::create(this, callfunc_selector(ownWorldSelectLayer::runParticle)), // Utilizamos CCCallFunc para llamar a la funci髇 runParticle
+              CCCallFunc::create(this, callfunc_selector(ownWorldSelectLayer::runParticle)), // Utilizamos CCCallFunc para llamar a la funci贸n runParticle
               CCFadeIn::create(0.1),
               CCEaseBounceOut::create(scaleWithBounce2),
               nullptr
@@ -907,7 +907,7 @@ bool ownWorldSelectLayer::init(int page) {
           Mod::get()->setSavedValue("wlevelunlocked", 6);
           level7Btn->runAction(CCSequence::create(
               CCDelayTime::create(1.8),
-              CCCallFunc::create(this, callfunc_selector(ownWorldSelectLayer::runParticle)), // Utilizamos CCCallFunc para llamar a la funci髇 runParticle
+              CCCallFunc::create(this, callfunc_selector(ownWorldSelectLayer::runParticle)), // Utilizamos CCCallFunc para llamar a la funci贸n runParticle
               CCFadeIn::create(0.1),
               CCEaseBounceOut::create(scaleWithBounce2),
               nullptr
@@ -1035,7 +1035,7 @@ bool ownWorldSelectLayer::init(int page) {
           Mod::get()->setSavedValue("wlevelunlocked", 7);
           level8Btn->runAction(CCSequence::create(
               CCDelayTime::create(1.5),
-              CCCallFunc::create(this, callfunc_selector(ownWorldSelectLayer::runParticle)), // Utilizamos CCCallFunc para llamar a la funci髇 runParticle
+              CCCallFunc::create(this, callfunc_selector(ownWorldSelectLayer::runParticle)), // Utilizamos CCCallFunc para llamar a la funci贸n runParticle
               CCFadeIn::create(0.1),
               CCEaseBounceOut::create(scaleWithBounce2),
               nullptr
@@ -1157,7 +1157,7 @@ bool ownWorldSelectLayer::init(int page) {
           Mod::get()->setSavedValue("wlevelunlocked", 8);
           level9Btn->runAction(CCSequence::create(
               CCDelayTime::create(2.7),
-              CCCallFunc::create(this, callfunc_selector(ownWorldSelectLayer::runParticle)), // Utilizamos CCCallFunc para llamar a la funci髇 runParticle
+              CCCallFunc::create(this, callfunc_selector(ownWorldSelectLayer::runParticle)), // Utilizamos CCCallFunc para llamar a la funci贸n runParticle
               CCFadeIn::create(0.1),
               CCEaseBounceOut::create(scaleWithBounce2),
               nullptr
@@ -1231,7 +1231,7 @@ bool ownWorldSelectLayer::init(int page) {
           Mod::get()->setSavedValue("wlevelunlocked", 9);
           level10Btn->runAction(CCSequence::create(
               CCDelayTime::create(1.8),
-              CCCallFunc::create(this, callfunc_selector(ownWorldSelectLayer::runParticle)), // Utilizamos CCCallFunc para llamar a la funci髇 runParticle
+              CCCallFunc::create(this, callfunc_selector(ownWorldSelectLayer::runParticle)), // Utilizamos CCCallFunc para llamar a la funci贸n runParticle
               CCFadeIn::create(0.1),
               CCEaseBounceOut::create(scaleWithBounce2),
               nullptr
@@ -1450,7 +1450,7 @@ addChild(m_scrollLayer);
           m_scrollLayer->moveToPage(1);
           level6Btn->runAction(CCSequence::create(
               CCDelayTime::create(1.2),
-              CCCallFunc::create(this, callfunc_selector(ownWorldSelectLayer::runParticle)), // Utilizamos CCCallFunc para llamar a la funci髇 runParticle
+              CCCallFunc::create(this, callfunc_selector(ownWorldSelectLayer::runParticle)), // Utilizamos CCCallFunc para llamar a la funci贸n runParticle
               CCFadeIn::create(0.1),
               CCEaseBounceOut::create(scaleWithBounce2),
               nullptr
@@ -1629,8 +1629,8 @@ addChild(m_scrollLayer);
         this,
         menu_selector(ownWorldSelectLayer::onGarage));
     menu3->setTouchEnabled(false);
-    auto delay = CCDelayTime::create(0.6f); // Crear una acci髇 de retraso de 2 segundos
-    auto callFunc = CCCallFunc::create(this, callfunc_selector(ownWorldSelectLayer::runScroll)); // Crear una acci髇 que llame a la funci髇 deseada
+    auto delay = CCDelayTime::create(0.6f); // Crear una acci贸n de retraso de 2 segundos
+    auto callFunc = CCCallFunc::create(this, callfunc_selector(ownWorldSelectLayer::runScroll)); // Crear una acci贸n que llame a la funci贸n deseada
   
     auto sequence = CCSequence::create(delay, callFunc,nullptr); // Crear una secuencia de acciones
 
@@ -1813,7 +1813,7 @@ void ownWorldSelectLayer::onWorldLevel(CCObject* sender) {
     CCMenuItemSpriteExtra* button = (CCMenuItemSpriteExtra*)sender;
     auto GLM = GameLevelManager::sharedState();
     auto level1popup = WorldLevelPopup::create("");
-    auto Layer = (CCLayer*)level1popup->getChildren()->objectAtIndex(0);
+    auto Layer = static_cast<CCLayer*>(static_cast<CCNode*>(level1popup)->getChildren()->objectAtIndex(0));
 
     auto BG = (CCScale9Sprite*)Layer->getChildren()->objectAtIndex(0);
     auto m_buttonMenu = CCMenu::create();
