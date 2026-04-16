@@ -27,7 +27,7 @@ public:
 	void onInfo(cocos2d::CCObject*);
 	void onPlay(cocos2d::CCObject*);
 	void onBack(cocos2d::CCObject*);
-	void keyBackClicked();
+	void keyBackClicked() override;
 	void createStars(GJGameLevel* level, CCLayer* layer);
 	void onWorldLevel(cocos2d::CCObject* sender);
 	void onGarage(cocos2d::CCObject* sender);
@@ -43,7 +43,7 @@ public:
 	/*void instantPage(cocos2d::CCObject*,int);*/
 	static ownWorldSelectLayer* create(int page);
 	static cocos2d::CCScene* scene(int page);
-	void updatePageWithObject(CCObject* page, CCObject* object);
+	void updatePageWithObject(cocos2d::CCObject* page, cocos2d::CCObject* object) override;
 	
 }; 
 
