@@ -2,10 +2,10 @@
 #include <Geode/Geode.hpp>
 #include <Geode/ui/Popup.hpp>
 
-// Usamos el namespace explícitamente
+using namespace geode::prelude;
+
 class MyCustomLevelPopup : public geode::Popup<std::string const&> {
 protected:
-    // Quitamos el 'override' momentáneamente si sigue dando problemas
     bool setup(std::string const& value) override; 
 
 public:
