@@ -17,8 +17,7 @@ private:
 
   
     virtual void keyBackClicked();
-    void updatePageWithObject(CCObject* page, CCObject* object);
+    void updatePageWithObject(cocos2d::CCObject* page, cocos2d::CCObject* object) override;
     void onClose(CCObject*);
     int m_level;
 };
-
