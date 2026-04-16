@@ -1810,7 +1810,7 @@ void ownWorldSelectLayer::onWorldLevel(CCObject* sender) {
     CCMenuItemSpriteExtra* button = (CCMenuItemSpriteExtra*)sender;
     auto GLM = GameLevelManager::sharedState();
     auto level1popup = MyCustomLevelPopup::create("Texto de prueba");
-    auto Layer = (cocos2d::CCLayer*)((cocos2d::CCNode*)level1popup)->getChildren()->objectAtIndex(0);
+    auto Layer = static_cast<cocos2d::CCLayer*>(static_cast<cocos2d::CCNode*>(level1popup)->getChildren()->objectAtIndex(0));
 
     auto BG = (CCScale9Sprite*)Layer->getChildren()->objectAtIndex(0);
     auto m_buttonMenu = CCMenu::create();
@@ -2061,8 +2061,8 @@ void ownWorldSelectLayer::onWorldLevel(CCObject* sender) {
     createStars(level, Layer);
 
     if (level1popup) {
-        // Usamos el cast directo de C para saltarnos la validación de herencia por ahora
-        ((geode::Popup<std::string const&>*)level1popup)->show();
+        // Cast simple a FLAlertLayer (que es la base de todos los popups)
+        static_cast<FLAlertLayer*>(level1popup)->show();
     }
 }
 
