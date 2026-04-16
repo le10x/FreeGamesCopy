@@ -1,30 +1,15 @@
-cmake_minimum_required(VERSION 3.21)
-set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_OSX_ARCHITECTURES "x86_64")
-set(CMAKE_CXX_VISIBILITY_PRESET hidden)
+cmake_minimum_required(VERSION 3.24)
 
-project(FreeGames VERSION 1.0.0)
+project(FreeGames VERSION 1.0.9)
 
-file(GLOB SOURCES
-	src/main.cpp
-    src/extras/*.cpp
-    src/hooks/*.cpp
-    src/Meltdown/*.cpp
-    src/SubZero/*.cpp
-    src/World/*.cpp
+find_package(Geode REQUIRED)
+
+file(GLOB_RECURSE SOURCES 
+    src/*.cpp 
+    src/*.hpp 
+    src/*.h
 )
-add_library(${PROJECT_NAME} SHARED
-    src/main.cpp
-    # Add your cpp files here
-    "src/World/ownWorldSelectLayer.cpp" "src/SubZero/SubZeroSelectLayer.cpp")
 
-if (NOT DEFINED ENV{GEODE_SDK})
-    message(FATAL_ERROR "Unable to find Geode SDK! Please define GEODE_SDK environment variable to point to Geode")
-else()
-    message(STATUS "Found Geode: $ENV{GEODE_SDK}")
-endif()
-
-add_subdirectory($ENV{GEODE_SDK} ${CMAKE_CURRENT_BINARY_DIR}/geode)
+add_library(${PROJECT_NAME} SHARED ${SOURCES})
 
 setup_geode_mod(${PROJECT_NAME})
