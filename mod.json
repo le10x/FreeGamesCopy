@@ -11,26 +11,23 @@
 	},
 	"early-load": true,
 	"links": {
-		"source": "https://github.com/iArtie/FreeGames",
-		"community": "https://discord.gg/gXg8w4xJDA"
+		"source": "https://github.com",
+		"community": "https://discord.gg"
 	},
 	"issues": {
 		"info": "Post your issues on the <cp>Issue tracking repository</c>.",
-		"url": "https://github.com/iArtie/FreeGames/issues/new/choose"
+		"url": "https://github.com/issues/new/choose"
 	},
 	"resources": {
 		"spritesheets": {
 			"IconSheet": [
 				"resources/icon/*.png"
 			]
-
 		},
 		"files": [
 			"resources/textures/SpinOffGames_Part1.zip",
-			"resources/textures/SpinOffGames_Part2.zip
+			"resources/textures/SpinOffGames_Part2.zip",
 			"resources/levels/*.txt"
-
 		]
-
 	}
 }
