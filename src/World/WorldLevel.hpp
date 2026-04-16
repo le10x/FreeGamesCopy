@@ -1,6 +1,7 @@
 #pragma once
 #include <Geode/Bindings.hpp>
 #include <Geode/Geode.hpp>
+#include <Geode/ui/Popup.hpp>
 class WorldLevel : public geode::Popup<std::string const&> {
 
 protected:
