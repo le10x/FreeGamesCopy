@@ -7,8 +7,10 @@
 #include <Geode/modify/GJGarageLayer.hpp>
 #include <Geode/modify/LevelTools.hpp>
 #include <Geode/Enums.hpp>
+#include <Geode/utils/web.hpp>
+
+// SOLO .hpp o .h
 #include "hooks/MoreGamesLayer.hpp"
-#include "hooks/MoreGamesLayer.cpp"
 #include "Meltdown/MeltdownSelectLayer.h"
 #include "SubZero/SubZeroSelectLayer.h"
 #include "World/ownWorldSelectLayer.h"
