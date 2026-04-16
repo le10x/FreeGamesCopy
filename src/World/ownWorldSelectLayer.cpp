@@ -1812,7 +1812,7 @@ void ownWorldSelectLayer::onWorldLevel(CCObject* sender) {
 
     CCMenuItemSpriteExtra* button = (CCMenuItemSpriteExtra*)sender;
     auto GLM = GameLevelManager::sharedState();
-    auto level1popup = WorldLevelPopup::create("");
+    auto level1popup = MyCustomLevelPopup::create("Texto de prueba");
     auto Layer = static_cast<CCLayer*>(static_cast<CCNode*>(level1popup)->getChildren()->objectAtIndex(0));
 
     auto BG = (CCScale9Sprite*)Layer->getChildren()->objectAtIndex(0);
@@ -2064,8 +2064,8 @@ void ownWorldSelectLayer::onWorldLevel(CCObject* sender) {
     /* m_title->setPositionY()*/
   /*  level1popup->addChild(m_title);*/
    /* level1popup->setContentSize({290,200});*/
-    static_cast<WorldLevel*>(level1popup)->show();
-
+    if (level1popup) {
+    level1popup->show();
 }
 
 void ownWorldSelectLayer::onPlay(CCObject* sender) {
