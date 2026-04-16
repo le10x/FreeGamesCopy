@@ -2064,7 +2064,7 @@ void ownWorldSelectLayer::onWorldLevel(CCObject* sender) {
     /* m_title->setPositionY()*/
   /*  level1popup->addChild(m_title);*/
    /* level1popup->setContentSize({290,200});*/
-    level1popup->show();
+    static_cast<WorldLevel*>(level1popup)->show();
 
 }
 
