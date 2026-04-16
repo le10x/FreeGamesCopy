@@ -2,21 +2,20 @@
 
 using namespace geode::prelude;
 
-// Implementación de WorldLevel
-bool WorldLevel::setup(std::string const& value) {
-    this->setID("world-level-popup"_spr);
-    this->setTitle("Nivel");
+bool MyCustomLevelPopup::setup(std::string const& value) {
+    this->setTitle("Información");
 
     auto label = CCLabelBMFont::create(value.c_str(), "bigFont.fnt");
+    label->setScale(0.6f);
     label->setPosition(m_mainLayer->getContentSize() / 2);
     m_mainLayer->addChild(label);
 
     return true;
 }
 
-WorldLevel* WorldLevel::create(std::string const& text) {
-    auto ret = new WorldLevel();
-    if (ret && ret->initAnchored(400.f, 280.f, text)) {
+MyCustomLevelPopup* MyCustomLevelPopup::create(std::string const& text) {
+    auto ret = new MyCustomLevelPopup();
+    if (ret && ret->initAnchored(350.f, 250.f, text)) {
         ret->autorelease();
         return ret;
     }
