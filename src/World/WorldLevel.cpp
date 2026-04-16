@@ -3,6 +3,7 @@
 using namespace geode::prelude;
 
 bool MyCustomLevelPopup::setup(std::string const& value) {
+    // Usamos m_mainLayer para todo lo visual
     this->setTitle("Información");
 
     auto label = CCLabelBMFont::create(value.c_str(), "bigFont.fnt");
@@ -22,3 +23,4 @@ MyCustomLevelPopup* MyCustomLevelPopup::create(std::string const& text) {
     CC_SAFE_DELETE(ret);
     return nullptr;
 }
+    
