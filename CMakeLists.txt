@@ -1,10 +1,12 @@
 cmake_minimum_required(VERSION 3.24)
 
-list(APPEND CMAKE_PREFIX_PATH $ENV{GEODE_SDK})
-
 project(FreeGames VERSION 1.0.9)
 
-find_package(Geode REQUIRED)
+if (NOT DEFINED ENV{GEODE_SDK})
+    message(FATAL_ERROR "No se encontro el SDK de Geode. Verifica el archivo .yml")
+endif()
+
+add_subdirectory($ENV{GEODE_SDK} ${CMAKE_CURRENT_BINARY_DIR}/geode)
 
 file(GLOB_RECURSE SOURCES 
     src/*.cpp 
