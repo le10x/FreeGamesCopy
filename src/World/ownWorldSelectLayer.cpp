@@ -1,6 +1,4 @@
 #include "ownWorldSelectLayer.h"
-//#include "NewLevelPage.h"
-#include <Geode/Geode.hpp>
 #include <Geode/Geode.hpp>
 #include <Geode/modify/MenuLayer.hpp>
 #include <Geode/modify/LevelSelectLayer.hpp>
@@ -8,12 +6,11 @@
 #include <Geode/modify/LevelPage.hpp>
 #include <Geode/modify/GJGameLevel.hpp>
 #include <Geode/Enums.hpp>
+#include <Geode/ui/Popup.hpp> // <-- IMPORTANTE PARA EL POPUP
 #include "../Meltdown/MeltdownSelectLayer.h"
 #include <iostream>
 #include "GJWorldNodeDecomp.hpp"
-#include "GJWorldNodeDecomp.cpp"
-#include "WorldLevel.hpp"
-#include "WorldLevel.cpp"
+#include "WorldLevel.hpp" // Solo el .hpp, NUNCA el .cpp
 
 using namespace geode::prelude;
 
@@ -1813,7 +1810,7 @@ void ownWorldSelectLayer::onWorldLevel(CCObject* sender) {
     CCMenuItemSpriteExtra* button = (CCMenuItemSpriteExtra*)sender;
     auto GLM = GameLevelManager::sharedState();
     auto level1popup = MyCustomLevelPopup::create("Texto de prueba");
-    auto Layer = static_cast<CCLayer*>(static_cast<CCNode*>(level1popup)->getChildren()->objectAtIndex(0));
+    auto Layer = static_cast<CCLayer*>(level1popup->getChildren()->objectAtIndex(0));
 
     auto BG = (CCScale9Sprite*)Layer->getChildren()->objectAtIndex(0);
     auto m_buttonMenu = CCMenu::create();
@@ -2056,31 +2053,32 @@ void ownWorldSelectLayer::onWorldLevel(CCObject* sender) {
     CCRect pprogressRect = pprogress->getTextureRect();
     pprogressRect.size.width *= psize;
     pprogress->setTextureRect(pprogressRect);
+    
     m_title->setPosition(BG->getPosition());
     m_title->setPositionY(m_title->getPositionY() + 110);
     Layer->addChild(m_title);
 
     createStars(level, Layer);
-    /* m_title->setPositionY()*/
-  /*  level1popup->addChild(m_title);*/
-   /* level1popup->setContentSize({290,200});*/
+
     if (level1popup) {
-    level1popup->show();
+        static_cast<geode::Popup<std::string const&>*>(level1popup)->show();
+    }
 }
 
 void ownWorldSelectLayer::onPlay(CCObject* sender) {
-	auto currentScene = CCDirector::sharedDirector()->getRunningScene();
+    auto currentScene = CCDirector::sharedDirector()->getRunningScene();
 
-    CCMenuItemSpriteExtra* button = (CCMenuItemSpriteExtra*)sender;
-    button->setEnabled(false);
+    CCMenuItemSpriteExtra* button = static_cast<CCMenuItemSpriteExtra*>(sender);
+    if (button) {
+        button->setEnabled(false);
+    }
+
     auto GLM = GameLevelManager::sharedState();
     auto playLayer = PlayLayer::scene(level, false, false);
-    FMODAudioEngine::sharedEngine()->playEffect("playSound_01.ogg");
-   /* std::cout << "level string:" << level->m_levelString.c_str() << std::endl;*/
     
-
-    CCDirector::get()->replaceScene(CCTransitionFade::create(0.5f, playLayer));
-
+    FMODAudioEngine::sharedEngine()->playEffect("playSound_01.ogg");
+    
+    CCDirector::sharedDirector()->replaceScene(CCTransitionFade::create(0.5f, playLayer));
 }
 
 
