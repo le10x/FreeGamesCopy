@@ -4,10 +4,12 @@
 
 using namespace geode::prelude;
 
-class MyCustomLevelPopup : public geode::Popup<std::string const&> {
+// Heredamos de Popup<> sin argumentos para máxima compatibilidad
+class MyCustomLevelPopup : public geode::Popup<> {
 protected:
-    bool setup(std::string const& value) override; 
+    bool setup() override; // Geode v5 prefiere setup sin argumentos si no hay plantilla
 
 public:
     static MyCustomLevelPopup* create(std::string const& text);
+    std::string m_text; // Guardamos el texto aquí
 };
