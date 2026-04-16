@@ -1810,7 +1810,7 @@ void ownWorldSelectLayer::onWorldLevel(CCObject* sender) {
     CCMenuItemSpriteExtra* button = (CCMenuItemSpriteExtra*)sender;
     auto GLM = GameLevelManager::sharedState();
     auto level1popup = MyCustomLevelPopup::create("Texto de prueba");
-    auto Layer = static_cast<CCLayer*>(level1popup->getChildren()->objectAtIndex(0));
+    auto Layer = (cocos2d::CCLayer*)((cocos2d::CCNode*)level1popup)->getChildren()->objectAtIndex(0);
 
     auto BG = (CCScale9Sprite*)Layer->getChildren()->objectAtIndex(0);
     auto m_buttonMenu = CCMenu::create();
@@ -2061,8 +2061,8 @@ void ownWorldSelectLayer::onWorldLevel(CCObject* sender) {
     createStars(level, Layer);
 
     if (level1popup) {
-        static_cast<geode::Popup<std::string const&>*>(level1popup)->show();
-    }
+    ((cocos2d::CCNode*)level1popup)->show();
+  }
 }
 
 void ownWorldSelectLayer::onPlay(CCObject* sender) {
